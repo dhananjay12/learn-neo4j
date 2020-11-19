@@ -39,7 +39,7 @@ CREATE
   (Charlize) -[:PRODUCED {roles:['Aileen']}]->         (Monster)
 ```
 
-##Simple read of data
+## Simple read of data
 
 Let’s find all entries in the movie table and output their title attribute in our RDBMS:
 
@@ -69,7 +69,7 @@ WHERE movie.released > 1998
 RETURN movie.title;
 ```
 
-##Join
+## Join
 
 Let’s list all persons and the movies they acted in.
 
@@ -130,7 +130,7 @@ MATCH (person:Person)
 WHERE (person)-[:ACTED_IN]->() AND (person)-[:PRODUCED]->()
 RETURN person.name
 ```
-##Aggregation
+## Aggregation
 
 Now let’s find out a bit about the directors in movies that Keanu Reeves acted in. We want to know how many of those movies each of them directed.
 ```

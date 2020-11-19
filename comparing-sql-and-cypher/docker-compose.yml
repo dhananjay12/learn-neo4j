@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  mariadb:
+    image: mariadb:10.5.6
+    volumes:
+      - mariadb_data:/var/lib/mariadb
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: movies
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+
+  neo4j:
+    image: neo4j:4.2.0
+    ports:
+      - '7474:7474'
+      - '7473:7473'
+      - '7687:7687'
+
+volumes:
+  mariadb_data:
+    driver: local

@@ -70,6 +70,7 @@ RETURN movie.title;
 ```
 
 ##Join
+
 Let’s list all persons and the movies they acted in.
 
 ```
@@ -130,6 +131,7 @@ WHERE (person)-[:ACTED_IN]->() AND (person)-[:PRODUCED]->()
 RETURN person.name
 ```
 ##Aggregation
+
 Now let’s find out a bit about the directors in movies that Keanu Reeves acted in. We want to know how many of those movies each of them directed.
 ```
 SELECT director.name, count(*)
